@@ -966,3 +966,27 @@ body.no-select { user-select: none; cursor: grabbing; }
   text-underline-offset: 4px;
 }
 .contact-text a:hover { color: #ffe08a; }
+
+/* =====================================================
+   LEVEL DESIGN PROJECT
+   ===================================================== */
+.game.unreal { --card: #2a3142; --card-text: #ffffff; --card-muted: #c9d1e0; background: var(--card); }
+.game.unreal .game-title {
+  font-family: var(--body);
+  font-weight: 700;
+}
+
+/* images below Unreal video */
+.game.unreal {
+  grid-template-areas:
+    "trailer info"
+    "gallery gallery";
+}
+.game.unreal > .gallery { display: block; margin-top: 1.5rem; }
+.game.unreal .gallery-imgs { grid-template-columns: repeat(3, 1fr); }
+.game.unreal .gallery-imgs .wide { grid-column: auto; }
+
+@media (max-width: 800px) {
+  .game.unreal { grid-template-areas: "trailer" "info" "gallery"; }
+  .game.unreal .gallery-imgs { grid-template-columns: 1fr; }
+}
